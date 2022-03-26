@@ -1,0 +1,18 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+.idea/
+**/build/
+**/target/
+**/*.iml
+**/logs
+**/*.log
+**/reports/
+**/reports/html-report
+gauge-test.iml
+igdrasil-ui-test-project.iml
+**/out/
+**/.gauge/
+/out
+/reports/*
+**/docs
+cd
