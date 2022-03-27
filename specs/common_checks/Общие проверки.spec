@@ -1,7 +1,7 @@
 Common checks
 =====================
      
-tags: regress , smoke
+tags: regress, smoke
 
 ## Проверка отображения страницы
 * Открыть сайт CSS Diner

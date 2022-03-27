@@ -13,9 +13,4 @@ public interface Validateable {
     $(this.getRootLocator()).shouldBe(Condition.visible);
     $(this.getRootLocator()).shouldBe(Condition.enabled);
   }
-
-  default void shouldBeInvalid() {
-    $(this.getRootLocator()).shouldBe(Condition.visible);
-    $(this.getRootLocator()).shouldBe(Condition.disabled);
-  }
 }

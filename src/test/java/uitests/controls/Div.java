@@ -4,11 +4,8 @@ import com.codeborne.selenide.Condition;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
 import uitests.models.wrappers.UIObject;
-
-import java.time.Duration;
-
 import static com.codeborne.selenide.Condition.visible;
-import static uitests.utils.CustomConditions.invalid;
+
 
 public class Div extends UIObject<Div> {
 
@@ -16,28 +13,13 @@ public class Div extends UIObject<Div> {
         super(locator);
     }
 
-    public Div(By locator, By parent) {
-        super(locator, parent);
-    }
-
     @Override
     public void shouldBeValid() {
         this.$().parent().shouldBe(visible);
     }
 
-    @Override
-    public void shouldBeInvalid() {
-        this.$().parent().shouldBe(visible);
-        this.$().parent().shouldBe(invalid());
-    }
-
     public Div click() {
         this.$().click();
-        return this;
-    }
-
-    public Div scroll() {
-        this.$().scrollTo();
         return this;
     }
 
@@ -52,8 +34,4 @@ public class Div extends UIObject<Div> {
         return this;
     }
 
-    public Div shouldExactText(String text) {
-        this.$().shouldBe(visible).shouldHave(Condition.exactText(text));
-        return this;
-    }
 }

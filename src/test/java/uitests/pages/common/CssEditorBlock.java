@@ -31,7 +31,7 @@ public class CssEditorBlock extends BasePage {
 
     @Step("Нажать кнопку Enter")
     public void clickEnterButton() {
-        enterButton.shouldBeVisible().click();
+        enterButton.shouldBeVisible().shouldHaveText("Enter").click();
     }
 
 }

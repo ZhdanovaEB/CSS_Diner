@@ -1,6 +1,5 @@
 package uitests.models.wrappers;
 
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
@@ -16,11 +15,6 @@ public class LocatorHolder {
         this.locator = locator;
     }
 
-    public LocatorHolder(By locator, By parent) {
-        this.locator = locator;
-        this.parent = parent;
-    }
-
     public By getRootLocator() {
         if (parent == null) {
             return locator;
@@ -34,15 +28,6 @@ public class LocatorHolder {
             return Selenide.$(locator);
         } else {
             return Selenide.$(parent).shouldBe(visible).find(locator);
-        }
-    }
-
-    public ElementsCollection getElementsCollection() {
-        if (parent == null) {
-            return Selenide.$$(locator);
-        } else {
-            Selenide.$(parent).shouldBe(visible);
-            return Selenide.$(parent).$$(locator);
         }
     }
 }
